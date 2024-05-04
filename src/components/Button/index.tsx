@@ -1,17 +1,14 @@
-import { ReactNode } from 'react';
-
 interface ButtonProps {
-  onClick: () => void;
-  children: ReactNode;
+  text: String;
 }
 
-export const Button = ({ onClick, children }: ButtonProps) => {
+export const Button = ({ text }: ButtonProps) => {
   return (
     <button
       className="w-full px-4 py-2 mb-2 text-lg text-white bg-lime-500 rounded-md focus:outline-none focus:ring focus:ring-lime-500"
-      onClick={onClick}
+      type="submit"
     >
-      {children}
+      {text}
     </button>
   );
 };

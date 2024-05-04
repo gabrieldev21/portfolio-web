@@ -10,7 +10,7 @@ export default function Home() {
   const router = useRouter();
   const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push('/home');
+    router.push('/');
   };
 
   return (
@@ -25,21 +25,20 @@ export default function Home() {
         className="flex flex-col gap-4 items-center justify-center w-full max-w-md p-12 mx-auto bg-white rounded-md shadow-md"
         onSubmit={handleOnSubmit}
       >
-        <h2 className="mb-4 text-2xl font-bold">Login</h2>
+        <div>
+          <h2 className="mb-4 text-2xl font-bold">Crie sua conta</h2>
+          <p className="mb-4 text-base font-extralight">preencha seus dados</p>
+        </div>
+        <Input type="text" placeholder="Nome" />
         <Input type="text" placeholder="Email ou número de celular" />
         <Input type="password" placeholder="Senha" />
-        <Button text="Iniciar Sessão" />
+        <Input type="password" placeholder="Confirmar Senha" />
+        <Button text="Cadastrar" />
         <span
-          onClick={() => router.push('/register')}
+          onClick={() => router.push('/')}
           className="text-base cursor-pointer"
         >
-          Cadastrar
-        </span>
-        <span
-          onClick={() => router.push('/recover')}
-          className="text-base cursor-pointer"
-        >
-          Recuperar senha
+          Já possuo login
         </span>
       </form>
     </main>
