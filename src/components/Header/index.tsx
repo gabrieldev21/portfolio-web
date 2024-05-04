@@ -16,22 +16,22 @@ export const Header = () => {
         </Link>
       </section>
       <section className="flex gap-4 [&>a]:text-white">
-        <Link className="hover:text-lime-500" href="/highlights">
+        <Link className="hover:text-lime-500" href="/home">
           Destaques
         </Link>
-        <Link className="hover:text-lime-500" href="/explore">
+        <Link className="hover:text-lime-500" href="/home">
           Explorar
         </Link>
-        <Link className="hover:text-lime-500" href="/portfolios">
+        <Link className="hover:text-lime-500" href="/home">
           Portfólios
         </Link>
-        <Link className="hover:text-lime-500" href="/">
+        <Link className="hover:text-lime-500" href="/home">
           Procurar
         </Link>
-        <Link className="hover:text-lime-500" href="/">
+        <Link className="hover:text-lime-500" href="/home">
           Notificação
         </Link>
-        <Link className="hover:text-lime-500" href="/login">
+        <Link className="hover:text-lime-500" href="/">
           Logout
         </Link>
       </section>
