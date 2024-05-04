@@ -1,18 +1,8 @@
-'use client';
-
 import Image from 'next/image';
 
-import { Button } from '@/components/Button';
-import { Input } from '@/components/Input';
-import { useRouter } from 'next/navigation';
+import { Button, Form, Input } from '@/components';
 
 export default function Home() {
-  const router = useRouter();
-  const handleOnSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    router.push('/home');
-  };
-
   return (
     <main className="flex flex-col gap-12 items-center justify-center min-h-screen">
       <Image
@@ -21,27 +11,18 @@ export default function Home() {
         width={56}
         height={56}
       />
-      <form
-        className="flex flex-col gap-4 items-center justify-center w-full max-w-md p-12 mx-auto bg-white rounded-md shadow-md"
-        onSubmit={handleOnSubmit}
+      <Form
+        label="Login"
+        onSubmitRouterPush="/home"
+        firstSpan="Cadastrar"
+        firstRouterPush="/register"
+        secondSpan="Recuperar senha"
+        secondRouterPush="/recover"
       >
-        <h2 className="mb-4 text-2xl font-bold">Login</h2>
         <Input type="text" placeholder="Email ou número de celular" />
         <Input type="password" placeholder="Senha" />
         <Button text="Iniciar Sessão" />
-        <span
-          onClick={() => router.push('/register')}
-          className="text-base cursor-pointer"
-        >
-          Cadastrar
-        </span>
-        <span
-          onClick={() => router.push('/recover')}
-          className="text-base cursor-pointer"
-        >
-          Recuperar senha
-        </span>
-      </form>
+      </Form>
     </main>
   );
 }
