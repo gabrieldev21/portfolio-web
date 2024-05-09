@@ -1,28 +1,22 @@
-import Image from 'next/image';
+import Link from 'next/link';
+import { cookies } from 'next/headers';
+import { redirect } from 'next/navigation';
 
-import { Button, Form, Input } from '@/components';
+import { Header } from '@/components';
 
 export default function Home() {
+  const cookieStore = cookies();
+  if (!cookieStore.get('access')?.value) redirect('/login');
+
   return (
-    <main className="flex flex-col gap-12 items-center justify-center min-h-screen">
-      <Image
-        src="/homeLogo.svg"
-        alt="foto da logo portfolioManager"
-        width={56}
-        height={56}
-      />
-      <Form
-        label="Login"
-        onSubmitRouterPush="/home"
-        firstSpan="Cadastrar"
-        firstRouterPush="/register"
-        secondSpan="Recuperar senha"
-        secondRouterPush="/recover"
-      >
-        <Input type="text" placeholder="Email ou número de celular" />
-        <Input type="password" placeholder="Senha" />
-        <Button text="Iniciar Sessão" />
-      </Form>
-    </main>
+    <>
+      <Header />
+      <main className="flex-col sm:flex-row items-center pt-8 justify-evenly max-h-screen max-w-screen">
+        <section className="flex flex-col text-white">
+          <Link href="/login">Back to Login</Link>
+          <span>Monte o seu próprio portfólio.</span>
+        </section>
+      </main>
+    </>
   );
 }
