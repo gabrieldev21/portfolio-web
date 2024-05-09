@@ -2,7 +2,6 @@
 import { redirect } from 'next/navigation';
 
 import api from '@service/api';
-import { errorApproach } from '../error';
 import { cookies } from 'next/headers';
 
 export default async function loginUser(login: FormData) {
@@ -19,6 +18,7 @@ export default async function loginUser(login: FormData) {
 
     redirect('/');
   } catch (error: any) {
-    errorApproach(error);
+    if (error.message === 'NEXT_REDIRECT') throw error;
+    console.log(error);
   }
 }
