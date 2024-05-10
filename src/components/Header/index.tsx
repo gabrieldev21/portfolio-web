@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import useLogout from '@/hooks/useLogout';
 
 export const Header = () => {
   return (
@@ -15,7 +14,7 @@ export const Header = () => {
           />
         </Link>
       </section>
-      <form action={useLogout} className="flex gap-4 [&>a]:text-white">
+      <section className="flex  gap-4 [&>a]:text-white">
         <Link className="hover:text-lime-500" href="/">
           Destaques
         </Link>
@@ -31,10 +30,10 @@ export const Header = () => {
         <Link className="hover:text-lime-500" href="/">
           Notificação
         </Link>
-        <button type="submit" className=" text-white hover:text-lime-500">
+        <Link href="/login" className="m-0 p-0 text-white hover:text-lime-500">
           Logout
-        </button>
-      </form>
+        </Link>
+      </section>
     </main>
   );
 };

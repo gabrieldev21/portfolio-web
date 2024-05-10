@@ -15,7 +15,6 @@ export default async function loginUser(login: FormData) {
     });
 
     cookies().set('access', data.token.access);
-
     redirect('/');
   } catch (error: any) {
     if (error.message === 'NEXT_REDIRECT') throw error;
