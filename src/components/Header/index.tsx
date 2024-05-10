@@ -1,7 +1,17 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect } from 'react';
+import { RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies';
+import { useRouter } from 'next/navigation';
 
-export const Header = () => {
+export const Header = ({ cookie }: { cookie?: RequestCookie | undefined }) => {
+  const router = useRouter();
+  useEffect(() => {
+    if (!cookie) router.push('/login');
+  }, []);
+
   return (
     <main className="flex justify-between px-[13vw] pt-5 [&>*]:cursor-pointer ">
       <section className="[&>a]:hover:text-lime-500 text-white">
