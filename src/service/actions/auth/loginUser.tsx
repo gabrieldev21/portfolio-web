@@ -14,7 +14,8 @@ export default async function loginUser(login: FormData) {
       password,
     });
 
-    cookies().set('access', data.token.access);
+    const expiration = new Date(Date.now() + 30 * 60 * 1000);
+    cookies().set('access', data.token.access, { expires: expiration });
     redirect('/');
   } catch (error: any) {
     if (error.message === 'NEXT_REDIRECT') throw error;
