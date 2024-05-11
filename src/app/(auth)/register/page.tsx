@@ -1,11 +1,11 @@
 import Image from 'next/image';
 
 import { Form, Input } from '@/components';
-import registerUser from '@/modules/actions/auth/registerUser';
+import registerUser from '@actions/auth/registerUser';
 
 export default function Register() {
   return (
-    <main className="flex flex-col gap-12 items-center justify-center min-h-screen">
+    <main className="flex flex-col gap-12 items-center justify-center h-[84vh]">
       <Image
         src="/homeLogo.svg"
         alt="foto da logo portfolioManager"

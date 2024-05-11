@@ -1,11 +1,11 @@
 import Image from 'next/image';
 
 import { Form, Input } from '@/components';
-import resetPassword from '@/modules/actions/auth/resetPassword';
+import resetPassword from '@actions/auth/resetPassword';
 
 export default function Recover() {
   return (
-    <main className="flex flex-col gap-12 items-center justify-center min-h-screen">
+    <main className="flex flex-col gap-12 items-center justify-center h-[74vh]">
       <Image
         src="/homeLogo.svg"
         alt="foto da logo portfolioManager"

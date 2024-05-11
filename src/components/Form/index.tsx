@@ -24,8 +24,10 @@ export const Form = ({
       action={action}
     >
       <div>
-        <h2 className="mb-4 text-2xl font-bold">{label}</h2>
-        <p className="mb-4 text-base font-extralight">{secondLabel}</p>
+        <h2 className="mb-4 text-2xl font-bold text-center">{label}</h2>
+        <p className="mb-4 text-base font-medium text-center text-stone-400">
+          {secondLabel}
+        </p>
       </div>
       {children}
       <Button text={buttonText} />

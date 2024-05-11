@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { Form, Input } from '@/components';
-import loginUser from '@/modules/actions/auth/loginUser';
+import loginUser from '@actions/auth/loginUser';
 
 export default function Login() {
   return (
