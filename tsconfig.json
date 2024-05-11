@@ -29,7 +29,8 @@
       "@store/*": ["./src/store/*"],
       "@types/*": ["./src/types/*"],
       "@service/*": ["./src/service/*"],
-      "@modules/*": ["./src/modules/*"]
+      "@modules/*": ["./src/modules/*"],
+      "@actions/*": ["./src/modules/actions/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
