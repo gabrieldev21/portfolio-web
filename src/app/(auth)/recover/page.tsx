@@ -3,6 +3,10 @@ import Image from 'next/image';
 import { Form, Input } from '@/components';
 import resetPassword from '@actions/auth/resetPassword';
 
+export const metadata = {
+  title: 'Recuperar senha',
+};
+
 export default function Recover() {
   return (
     <main className="flex flex-col gap-12 items-center justify-center h-[74vh]">

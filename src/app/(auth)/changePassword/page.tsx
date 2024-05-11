@@ -3,6 +3,10 @@ import Image from 'next/image';
 import { Form, Input } from '@components';
 import changePassword from '@actions/auth/changePassword';
 
+export const metadata = {
+  title: 'Mudar senha',
+};
+
 export default function ChangePassword() {
   return (
     <main className="flex flex-col gap-12 items-center justify-center h-[84vh]">

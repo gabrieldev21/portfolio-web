@@ -2,6 +2,10 @@ import { Header } from '@/components';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 
+export const metadata = {
+  title: 'Portfolio Home',
+};
+
 export default function Home() {
   if (!cookies().has('access')) redirect('/login');
 

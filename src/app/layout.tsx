@@ -6,7 +6,6 @@ import '@styles/globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Portfolio Home',
   description: 'Project to publish your portfolio',
 };
 
@@ -17,6 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <link rel="icon" href="/homeLogo.svg" />
       <body
         className={`${inter.className} min-h-screen min-w-screen flex flex-col gap-4 justify-between  bg-black-blue`}
       >

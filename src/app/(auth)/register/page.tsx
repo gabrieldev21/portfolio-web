@@ -3,6 +3,10 @@ import Image from 'next/image';
 import { Form, Input } from '@/components';
 import registerUser from '@actions/auth/registerUser';
 
+export const metadata = {
+  title: 'Cadastrar senha',
+};
+
 export default function Register() {
   return (
     <main className="flex flex-col gap-12 items-center justify-center h-[84vh]">
