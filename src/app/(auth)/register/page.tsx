@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { Form, Input } from '@/components';
 import registerUser from '@actions/auth/registerUser';
 
@@ -10,12 +8,6 @@ export const metadata = {
 export default function Register() {
   return (
     <main className="flex flex-col gap-12 items-center justify-center h-[84vh]">
-      <Image
-        src="/homeLogo.svg"
-        alt="foto da logo portfolioManager"
-        width={56}
-        height={56}
-      />
       <Form
         label="Crie sua conta"
         secondLabel="preencha seus dados"

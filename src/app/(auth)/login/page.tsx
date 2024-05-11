@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { Form, Input } from '@/components';
 import loginUser from '@actions/auth/loginUser';
 
@@ -10,12 +8,6 @@ export const metadata = {
 export default function Login() {
   return (
     <main className="flex flex-col gap-12 items-center justify-center h-[74vh]">
-      <Image
-        src="/homeLogo.svg"
-        alt="foto da logo portfolioManager"
-        width={56}
-        height={56}
-      />
       <Form
         label="Login"
         firstSpan="Cadastrar"
