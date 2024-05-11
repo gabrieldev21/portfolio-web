@@ -1,6 +1,8 @@
 import Image from 'next/image';
 
 export const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
     <footer className="bg-gradient-to-r from-slate-800 to-green-500 text-white  w-full py-8">
       <div className="container mx-auto px-4">
@@ -23,7 +25,7 @@ export const Footer = () => {
               width={48}
               height={48}
             />
-            <span>2023 - Portfoda, Todos os Direitos Reservados©</span>
+            <span>{currentYear} - Portfoda, Todos os Direitos Reservados©</span>
             <div />
           </div>
         </div>
