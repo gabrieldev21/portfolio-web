@@ -21,7 +21,6 @@ export default function RootLayout({
         className={`${inter.className} min-h-screen min-w-screen flex flex-col gap-4 justify-between  bg-black-blue`}
       >
         <main className="[&>main]:flex">{children}</main>
-
         <Footer />
       </body>
     </html>
