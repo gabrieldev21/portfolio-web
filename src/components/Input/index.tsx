@@ -1,10 +1,3 @@
-interface InputProps {
-  type: string;
-  placeholder: string;
-  id?: string;
-  name?: string;
-}
-
 export const Input = ({ type, placeholder, id, name }: InputProps) => {
   return (
     <input
@@ -16,3 +9,10 @@ export const Input = ({ type, placeholder, id, name }: InputProps) => {
     />
   );
 };
+
+interface InputProps {
+  type: string;
+  placeholder: string;
+  id?: string;
+  name?: string;
+}

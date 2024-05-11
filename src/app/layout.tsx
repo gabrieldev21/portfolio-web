@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google';
 
+import { Footer } from '@/components';
 import '@styles/globals.css';
-import ReactQueryProvider from '@/utils/reactQueryProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -18,11 +18,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} min-h-screen min-w-screen bg-black-blue`}
+        className={`${inter.className} min-h-screen min-w-screen flex flex-col justify-between  bg-black-blue`}
       >
-        <ReactQueryProvider>
-          <main className="[&>main]:flex">{children}</main>
-        </ReactQueryProvider>
+        <main className="[&>main]:flex">{children}</main>
+
+        <Footer />
       </body>
     </html>
   );

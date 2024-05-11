@@ -1,8 +1,9 @@
 'use server';
 import { redirect } from 'next/navigation';
+import { cookies } from 'next/headers';
 
 import api from '@service/api';
-import { cookies } from 'next/headers';
+import { errorApproach } from '@modules/actions/error';
 
 export default async function loginUser(login: FormData) {
   const email = login.get('email');
@@ -18,7 +19,6 @@ export default async function loginUser(login: FormData) {
     cookies().set('access', data.token.access, { expires: expiration });
     redirect('/');
   } catch (error: any) {
-    if (error.message === 'NEXT_REDIRECT') throw error;
-    console.log(error);
+    errorApproach(error);
   }
 }

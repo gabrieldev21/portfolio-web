@@ -28,7 +28,8 @@
       "@hooks/*": ["./src/hooks/*"],
       "@store/*": ["./src/store/*"],
       "@types/*": ["./src/types/*"],
-      "@service/*": ["./src/service/*"]
+      "@service/*": ["./src/service/*"],
+      "@modules/*": ["./src/modules/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

@@ -1,11 +1,11 @@
 import Image from 'next/image';
 
-import { Button, Form, Input } from '@/components';
-import loginUser from '@/service/actions/auth/loginUser';
+import { Form, Input } from '@/components';
+import loginUser from '@/modules/actions/auth/loginUser';
 
 export default function Login() {
   return (
-    <main className="flex flex-col gap-12 items-center justify-center min-h-screen">
+    <main className="flex flex-col gap-12 items-center justify-center h-[74vh]">
       <Image
         src="/homeLogo.svg"
         alt="foto da logo portfolioManager"
@@ -14,12 +14,12 @@ export default function Login() {
       />
       <Form
         label="Login"
-        onSubmitRouterPush="/login"
         firstSpan="Cadastrar"
         firstRouterPush="/register"
         secondSpan="Recuperar senha"
         secondRouterPush="/recover"
         action={loginUser}
+        buttonText="Iniciar Sessão"
       >
         <Input
           id="email"
@@ -33,7 +33,6 @@ export default function Login() {
           type="password"
           placeholder="Senha"
         />
-        <Button text="Iniciar Sessão" />
       </Form>
     </main>
   );

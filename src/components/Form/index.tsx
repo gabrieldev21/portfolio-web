@@ -1,6 +1,9 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
+import { useFormStatus } from 'react-dom';
+
+import { Button } from '@components';
 
 export const Form = ({
   children,
@@ -11,12 +14,13 @@ export const Form = ({
   secondSpan,
   secondRouterPush,
   action,
+  buttonText,
 }: FormProps) => {
   const router = useRouter();
 
   return (
     <form
-      className="flex flex-col gap-4 items-center justify-center w-full max-w-md p-12 mx-auto bg-white rounded-md shadow-md"
+      className="flex flex-col gap-4 items-center justify-center w-full max-w-md p-12 mx-auto bg-white rounded-md shadow-md mg-10"
       action={action}
     >
       <div>
@@ -24,6 +28,7 @@ export const Form = ({
         <p className="mb-4 text-base font-extralight">{secondLabel}</p>
       </div>
       {children}
+      <Button text={buttonText} />
       <span
         onClick={() => router.push(firstRouterPush)}
         className="text-base cursor-pointer"
@@ -44,10 +49,10 @@ interface FormProps {
   children: React.ReactNode;
   label: string;
   secondLabel?: string;
-  onSubmitRouterPush: string;
   firstSpan: string;
   firstRouterPush: string;
   secondSpan?: string;
   secondRouterPush?: string;
   action?: (action: FormData) => Promise<void>;
+  buttonText: string;
 }

@@ -1,8 +1,7 @@
 import Image from 'next/image';
 
-import { Button, Form, Input } from '@/components';
-import api from '@/service/api';
-import registerUser from '@/service/actions/auth/registerUser';
+import { Form, Input } from '@/components';
+import registerUser from '@/modules/actions/auth/registerUser';
 
 export default function Register() {
   return (
@@ -16,10 +15,10 @@ export default function Register() {
       <Form
         label="Crie sua conta"
         secondLabel="preencha seus dados"
-        onSubmitRouterPush="/"
         firstSpan="Já possuo login"
         firstRouterPush="/login"
         action={registerUser}
+        buttonText="Cadastrar"
       >
         <Input id="name" name="name" type="text" placeholder="Nome" />
         <Input
@@ -40,16 +39,7 @@ export default function Register() {
           type="password"
           placeholder="Confirmar Senha"
         />
-        <Button text="Cadastrar" />
       </Form>
     </main>
   );
 }
-
-// export type RegisterResponse = {
-//   token: {
-//     refresh: string;
-//     access: string;
-//   };
-//   msg: string;
-// };

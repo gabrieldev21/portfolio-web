@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
-import { Button, Form, Input } from '@/components';
-import resetPassword from '@/service/actions/auth/resetPassword';
+import { Form, Input } from '@/components';
+import resetPassword from '@/modules/actions/auth/resetPassword';
 
 export default function Recover() {
   return (
@@ -15,10 +15,10 @@ export default function Recover() {
       <Form
         label="Recuperar senha"
         secondLabel="Preencha o campo de E-mail"
-        onSubmitRouterPush="/"
         firstSpan="Iniciar sessão"
         firstRouterPush="/login"
         action={resetPassword}
+        buttonText="Enviar"
       >
         <Input
           id="email"
@@ -26,7 +26,6 @@ export default function Recover() {
           type="text"
           placeholder="Email ou número de celular"
         />
-        <Button text="Enviar" />
       </Form>
     </main>
   );
