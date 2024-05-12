@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 
 import { Button } from '@components';
+import { useFormState } from 'react-dom';
 
 export const Form = ({
   children,
@@ -16,11 +17,12 @@ export const Form = ({
   buttonText,
 }: FormProps) => {
   const router = useRouter();
+  const [state, formAction] = useFormState(action, null);
 
   return (
     <form
       className="flex flex-col gap-4 items-center justify-center w-full max-w-md p-12 mx-auto bg-white rounded-md shadow-md mg-10"
-      action={action}
+      action={formAction}
     >
       <div>
         <h2 className="mb-4 text-2xl font-bold text-center">{label}</h2>
@@ -28,6 +30,11 @@ export const Form = ({
           {secondLabel}
         </p>
       </div>
+      {state != null && (
+        <div className="flex-1 rounded-lg bg-cyan-600 p-8 text-white">
+          <pre>{JSON.stringify(state)}</pre>
+        </div>
+      )}
       {children}
       <Button text={buttonText} />
       <span
@@ -54,6 +61,7 @@ interface FormProps {
   firstRouterPush: string;
   secondSpan?: string;
   secondRouterPush?: string;
-  action?: (action: FormData) => Promise<void>;
+  action: (state: Awaited<any>) => any | Promise<any>;
+  dispatch: () => void;
   buttonText: string;
 }

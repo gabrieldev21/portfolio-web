@@ -1,7 +1,8 @@
 'use server';
 import api from '@service/api';
+import { errorApproach } from '@modules/actions/error';
 
-export default async function profile(token: FormData) {
+export default async function profile(state: any, token: FormData) {
   try {
     const res = await api.get('/user/profile/', {
       headers: {
@@ -9,6 +10,6 @@ export default async function profile(token: FormData) {
       },
     });
   } catch (error: any) {
-    throw error.message;
+    return errorApproach(error);
   }
 }

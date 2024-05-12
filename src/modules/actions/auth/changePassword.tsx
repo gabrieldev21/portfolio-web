@@ -5,7 +5,7 @@ import { cookies } from 'next/headers';
 import api from '@service/api';
 import { errorApproach } from '@modules/actions/error';
 
-export default async function changePassword(change: FormData) {
+export default async function changePassword(state: any, change: FormData) {
   const old_password = change.get('old_password');
   const new_password = change.get('new_password');
   const new_password2 = change.get('new_password2');
@@ -26,6 +26,6 @@ export default async function changePassword(change: FormData) {
     );
     redirect('/login');
   } catch (error: any) {
-    errorApproach(error);
+    return errorApproach(error);
   }
 }

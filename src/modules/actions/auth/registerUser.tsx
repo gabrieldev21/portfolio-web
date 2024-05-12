@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 import api from '@service/api';
 import { errorApproach } from '@modules/actions/error';
 
-export default async function registerUser(register: FormData) {
+export default async function registerUser(state: any, register: FormData) {
   const email = register.get('email');
   const name = register.get('name');
   const password = register.get('password');
@@ -20,6 +20,6 @@ export default async function registerUser(register: FormData) {
 
     redirect('/');
   } catch (error: any) {
-    errorApproach(error);
+    return errorApproach(error);
   }
 }

@@ -5,7 +5,7 @@ import { cookies } from 'next/headers';
 import api from '@service/api';
 import { errorApproach } from '@modules/actions/error';
 
-export default async function loginUser(login: FormData) {
+export default async function loginUser(state: any, login: FormData) {
   const email = login.get('email');
   const password = login.get('password');
 
@@ -19,6 +19,6 @@ export default async function loginUser(login: FormData) {
     cookies().set('access', data.token.access, { expires: expiration });
     redirect('/');
   } catch (error: any) {
-    errorApproach(error);
+    return errorApproach(error);
   }
 }
