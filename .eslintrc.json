@@ -1,9 +1,5 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "eslint-config-airbnb",
-    "plugin:@tanstack/eslint-plugin-query/recommended"
-  ],
+  "extends": ["next/core-web-vitals", "eslint-config-airbnb"],
   "rules": {
     "react/no-unescaped-entities": "off",
     "@next/next/no-img-element": "off"
