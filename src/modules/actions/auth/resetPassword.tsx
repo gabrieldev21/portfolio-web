@@ -4,7 +4,7 @@ import { redirect } from 'next/navigation';
 import api from '@service/api';
 import { errorApproach } from '@modules/actions/error';
 
-export default async function resetPassword(state: any, reset: FormData) {
+export default async function resetPassword(_: any, reset: FormData) {
   const email = reset.get('email');
 
   try {
