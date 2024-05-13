@@ -12,7 +12,7 @@ export default async function resetPassword(_: any, reset: FormData) {
       email,
     });
 
-    redirect('/login');
+    return 'Nova senha enviada para e-mail solicitado!';
   } catch (error: any) {
     return errorApproach(error);
   }

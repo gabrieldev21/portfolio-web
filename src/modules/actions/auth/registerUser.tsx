@@ -18,7 +18,7 @@ export default async function registerUser(_: any, register: FormData) {
       password2,
     });
 
-    redirect('/');
+    return 'Usuário cadastrado com sucesso';
   } catch (error: any) {
     return errorApproach(error);
   }
