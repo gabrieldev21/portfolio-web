@@ -9,9 +9,9 @@ export default function Recover() {
   return (
     <main className="flex flex-col gap-12 items-center justify-center h-[74vh]">
       <Form
-        label="Recuperar senha"
-        secondLabel="Preencha o campo de E-mail"
-        firstSpan="Iniciar sessão"
+        title="Recuperar senha"
+        subtitle="Preencha o campo de E-mail"
+        firstRouteText="Iniciar sessão"
         firstRouterPush="/login"
         action={resetPassword}
         buttonText="Enviar"

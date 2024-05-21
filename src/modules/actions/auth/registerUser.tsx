@@ -8,14 +8,14 @@ export default async function registerUser(_: any, register: FormData) {
   const email = register.get('email');
   const name = register.get('name');
   const password = register.get('password');
-  const password2 = register.get('password2');
+  const confirm_new_password = register.get('confirm_new_password');
 
   try {
     await api.post('/user/register/', {
       email,
       name,
       password,
-      password2,
+      password2: confirm_new_password,
     });
 
     return 'Usuário cadastrado com sucesso';

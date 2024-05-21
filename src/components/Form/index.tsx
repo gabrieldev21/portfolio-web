@@ -8,11 +8,11 @@ import { useEffect } from 'react';
 
 export const Form = ({
   children,
-  label,
-  secondLabel,
-  firstSpan,
+  title,
+  subtitle,
+  firstRouteText,
   firstRouterPush,
-  secondSpan,
+  secondRouteText,
   secondRouterPush,
   action,
   buttonText,
@@ -31,9 +31,9 @@ export const Form = ({
         action={formAction}
       >
         <div>
-          <h2 className="mb-4 text-2xl font-bold text-center">{label}</h2>
+          <h2 className="mb-4 text-2xl font-bold text-center">{title}</h2>
           <p className="mb-4 text-base font-medium text-center text-stone-400">
-            {secondLabel}
+            {subtitle}
           </p>
         </div>
         {children}
@@ -42,13 +42,13 @@ export const Form = ({
           onClick={() => router.push(firstRouterPush)}
           className="text-base cursor-pointer"
         >
-          {firstSpan}
+          {firstRouteText}
         </span>
         <span
           onClick={() => router.push(secondRouterPush ?? '')}
           className="text-base cursor-pointer"
         >
-          {secondSpan}
+          {secondRouteText}
         </span>
       </form>
     </>
@@ -57,11 +57,11 @@ export const Form = ({
 
 interface FormProps {
   children: React.ReactNode;
-  label: string;
-  secondLabel?: string;
-  firstSpan: string;
+  title: string;
+  subtitle?: string;
+  firstRouteText: string;
   firstRouterPush: string;
-  secondSpan?: string;
+  secondRouteText?: string;
   secondRouterPush?: string;
   action: (
     state: Awaited<unknown>,

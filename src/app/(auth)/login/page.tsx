@@ -9,10 +9,10 @@ export default function Login() {
   return (
     <main className="flex flex-col gap-12 items-center justify-center h-[74vh]">
       <Form
-        label="Login"
-        firstSpan="Cadastrar"
+        title="Login"
+        firstRouteText="Cadastrar"
         firstRouterPush="/register"
-        secondSpan="Recuperar senha"
+        secondRouteText="Recuperar senha"
         secondRouterPush="/recover"
         action={loginUser}
         buttonText="Iniciar Sessão"

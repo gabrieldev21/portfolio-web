@@ -9,9 +9,9 @@ export default function Register() {
   return (
     <main className="flex flex-col gap-12 items-center justify-center h-[84vh]">
       <Form
-        label="Crie sua conta"
-        secondLabel="preencha seus dados"
-        firstSpan="Já possuo login"
+        title="Crie sua conta"
+        subtitle="preencha seus dados"
+        firstRouteText="Já possuo login"
         firstRouterPush="/login"
         action={registerUser}
         buttonText="Cadastrar"
@@ -30,8 +30,8 @@ export default function Register() {
           placeholder="Senha"
         />
         <Input
-          id="password2"
-          name="password2"
+          id="confirm_new_password"
+          name="confirm_new_password"
           type="password"
           placeholder="Confirmar Senha"
         />

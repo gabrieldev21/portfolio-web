@@ -13,8 +13,8 @@ export default function ChangePassword() {
   return (
     <main className="flex flex-col gap-12 items-center justify-center h-[84vh]">
       <Form
-        label="Crie uma nova senha"
-        firstSpan="Retornar para home"
+        title="Crie uma nova senha"
+        firstRouteText="Retornar para home"
         firstRouterPush="/"
         action={changePassword}
         buttonText="Confirmar"
@@ -32,8 +32,8 @@ export default function ChangePassword() {
           placeholder="Senha Nova"
         />
         <Input
-          id="new_password2"
-          name="new_password2"
+          id="confirm_new_password"
+          name="confirm_new_password"
           type="password"
           placeholder="Confirmar Senha"
         />
