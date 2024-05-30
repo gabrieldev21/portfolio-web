@@ -1,5 +1,6 @@
 import { Form, Input } from '@/components';
 import registerUser from '@actions/auth/registerUser';
+import styles from './styles.module.scss';
 
 export const metadata = {
   title: 'Cadastrar senha',
@@ -7,7 +8,7 @@ export const metadata = {
 
 export default function Register() {
   return (
-    <main className="flex flex-col gap-12 items-center justify-center h-[84vh]">
+    <main className={styles.main}>
       <Form
         title="Crie sua conta"
         subtitle="preencha seus dados"

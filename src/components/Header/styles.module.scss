@@ -1,0 +1,84 @@
+.header {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  padding-left: 13vw;
+  padding-right: 13vw;
+  padding-top: 1.25rem;
+  cursor: pointer;
+  width: 100%;
+
+  a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      color: #84cc16;
+    }
+  }
+}
+
+.section {
+  color: white;
+
+  &:hover {
+    color: #84cc16;
+  }
+
+  &.min-h-30px {
+    min-height: 30px;
+  }
+
+  &.min-w-30px {
+    min-width: 30px;
+  }
+}
+
+.nav {
+  display: none;
+  gap: 1rem;
+
+  @media (min-width: 1024px) {
+    display: flex;
+  }
+
+  .whitespace-nowrap {
+    white-space: nowrap;
+  }
+
+  .form {
+    margin: 0;
+    padding: 0;
+    color: white;
+
+    button {
+      color: inherit;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+        color: #84cc16;
+      }
+    }
+  }
+}
+
+.mobileMenu {
+  @media (max-width: 1024px) {
+    display: block;
+  }
+
+  button {
+    color: white;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+
+    &:hover {
+      color: #84cc16;
+    }
+  }
+}

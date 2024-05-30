@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import useLogout from '@/hooks/useLogout';
+import styles from './styles.module.scss';
 
 export const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -25,10 +26,10 @@ export const Header = () => {
   }, []);
 
   return (
-    <header className="flex gap-4 justify-between px-[13vw] pt-5 cursor-pointer w-full">
-      <section className="hover:text-lime-500 text-white">
+    <header className={styles.header}>
+      <section className={styles.section}>
         <Link href="/">
-          <div className="min-h-[30px] min-w-[30px]">
+          <div className={styles.logo}>
             <Image
               src="/homeLogo.svg"
               alt="foto da logo portfolioManager"
@@ -39,39 +40,29 @@ export const Header = () => {
         </Link>
       </section>
       <nav
-        className={`lg:flex gap-4 [&>a]:text-white ${
-          menuOpen ? 'flex' : 'hidden'
-        } `}
+        className={`${styles.nav} ${menuOpen ? styles.flex : styles.hidden}`}
       >
-        <Link className="hover:text-lime-500" href="/">
+        <Link className={styles.navLink} href="/">
           Destaques
         </Link>
-        <Link className="hover:text-lime-500" href="/">
+        <Link className={styles.navLink} href="/">
           Explorar
         </Link>
-        <Link className="hover:text-lime-500" href="/">
+        <Link className={styles.navLink} href="/">
           Procurar
         </Link>
-        <Link className="hover:text-lime-500" href="/">
+        <Link className={styles.navLink} href="/">
           Notificação
         </Link>
-        <Link
-          className="hover:text-lime-500 whitespace-nowrap"
-          href="/changePassword"
-        >
+        <Link className={styles.navLink} href="/changePassword">
           Trocar senha
         </Link>
-        <form action={useLogout}>
-          <button className="m-0 p-0 text-white hover:text-lime-500">
-            Logout
-          </button>
+        <form action={useLogout} className={styles.form}>
+          <button className={styles.logoutButton}>Logout</button>
         </form>
       </nav>
-      <div className="lg:hidden">
-        <button
-          className="text-white hover:text-lime-500"
-          onClick={handleMenuToggle}
-        >
+      <div className={styles.mobileMenu}>
+        <button className={styles.menuButton} onClick={handleMenuToggle}>
           {!menuOpen ? 'Menu' : 'Fechar'}
         </button>
       </div>

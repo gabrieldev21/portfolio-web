@@ -1,5 +1,6 @@
 import { Form, Input } from '@/components';
 import resetPassword from '@actions/auth/resetPassword';
+import styles from './styles.module.scss';
 
 export const metadata = {
   title: 'Recuperar senha',
@@ -7,7 +8,7 @@ export const metadata = {
 
 export default function Recover() {
   return (
-    <main className="flex flex-col gap-12 items-center justify-center h-[74vh]">
+    <main className={styles.main}>
       <Form
         title="Recuperar senha"
         subtitle="Preencha o campo de E-mail"

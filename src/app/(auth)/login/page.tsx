@@ -1,5 +1,6 @@
 import { Form, Input } from '@/components';
 import loginUser from '@actions/auth/loginUser';
+import styles from './styles.module.scss';
 
 export const metadata = {
   title: 'Login',
@@ -7,7 +8,7 @@ export const metadata = {
 
 export default function Login() {
   return (
-    <main className="flex flex-col gap-12 items-center justify-center h-[74vh]">
+    <main className={styles.main}>
       <Form
         title="Login"
         firstRouteText="Cadastrar"

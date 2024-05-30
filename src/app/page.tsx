@@ -1,24 +1,26 @@
-import { Header } from '@/components';
+import { Suspense } from 'react';
 import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
-import { Suspense } from 'react';
+
+import { Header } from '@/components';
 import Loading from './loading';
+import styles from './styles.module.scss';
 
 export const metadata = {
   title: 'Portfolio Home',
 };
 
 export default function Home() {
-  if (!cookies().has('access')) redirect('/login');
+  // if (!cookies().has('access')) redirect('/login');
 
   return (
-    <Suspense fallback={<Loading />}>
+    <div>
       <Header />
-      <main className="flex-col sm:flex-row justify-center pt-8 max-h-screen max-w-screen">
-        <section className="flex flex-col text-white">
+      <main className={styles.main}>
+        <section className={styles.section}>
           <span>Profile portfólio.</span>
         </section>
       </main>
-    </Suspense>
+    </div>
   );
 }

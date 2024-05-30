@@ -1,10 +1,12 @@
 'use client';
 
+import { useEffect } from 'react';
+import { Toaster, toast } from 'sonner';
 import { useRouter } from 'next/navigation';
+
 import { Button } from '@components';
 import { useFormState } from 'react-dom';
-import { Toaster, toast } from 'sonner';
-import { useEffect } from 'react';
+import styles from './styles.module.scss';
 
 export const Form = ({
   children,
@@ -26,28 +28,17 @@ export const Form = ({
   return (
     <>
       <Toaster position="top-center" closeButton />
-      <form
-        className="flex flex-col gap-4 items-center justify-center w-full max-w-md p-12 mx-auto bg-white rounded-md shadow-md mg-10"
-        action={formAction}
-      >
+      <form className={styles.form} action={formAction}>
         <div>
-          <h2 className="mb-4 text-2xl font-bold text-center">{title}</h2>
-          <p className="mb-4 text-base font-medium text-center text-stone-400">
-            {subtitle}
-          </p>
+          <h2>{title}</h2>
+          <p>{subtitle}</p>
         </div>
         {children}
         <Button text={buttonText} />
-        <span
-          onClick={() => router.push(firstRouterPush)}
-          className="text-base cursor-pointer"
-        >
+        <span onClick={() => router.push(firstRouterPush)}>
           {firstRouteText}
         </span>
-        <span
-          onClick={() => router.push(secondRouterPush ?? '')}
-          className="text-base cursor-pointer"
-        >
+        <span onClick={() => router.push(secondRouterPush ?? '')}>
           {secondRouteText}
         </span>
       </form>
